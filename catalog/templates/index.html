@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Página inicial da biblioteca</h1>
+
+<p>Bem-vindo ao <em>LocalLibrary</em>, um site em Django muito básico.</p>
+
+<h2>Conteúdo</h2>
+
+<h2>Dynamic content</h2>
+
+<p>A biblioteca possui os seguintes conteudos:</p>
+<ul>
+  <li><strong>Livros:</strong> {{ num_books }}</li>
+  <li><strong>Cópias:</strong> {{ num_instances }}</li>
+  <li><strong>Cópias disponíveis:</strong> {{ num_instances_available }}</li>
+  <li><strong>Autores:</strong> {{ num_authors }}</li>
+</ul>
+
+<p>Quantidade de visitas na página: {{ num_visits }} visita{{ num_visits|pluralize }}.</p>
+{% endblock %}
