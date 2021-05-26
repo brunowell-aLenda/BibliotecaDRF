@@ -13,7 +13,7 @@ Assim, vera se foi instalado
 
 Execute os seguintes comandos(se você estiver no Windows, pode usar py ou em py -3 vez de python para iniciar o Python):
 
-
+|para atualizar o banco de dados de forma adequada.|
 `python3 manage.py makemigrations`
 `python3 manage.py migrate`
 `python3 manage.py createsuperuser`
