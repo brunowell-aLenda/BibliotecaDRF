@@ -1,9 +1,12 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Lista de Autores</h1>
-  {% if author_list %}
-    <ul>
+
+<h1>Author List</h1>
+
+{% if author_list %}
+  <ul>
+
   {% for author in author_list %}
     <li>
       <a href="{{ author.get_absolute_url }}">
@@ -11,8 +14,13 @@
       </a>
     </li>
   {% endfor %}
+
  </ul>
 {% else %}
-  <p>Não há autores na biblioteca.</p>
-{% endif %}      
+  <p>There are no authors available.</p>
+{% endif %}
+        
+        
+        
 {% endblock %}
+

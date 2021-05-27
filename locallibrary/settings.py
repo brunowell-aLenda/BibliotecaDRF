@@ -20,6 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+import os 
 SECRET_KEY = 'django-insecure-#9arp!*297wx)hg9u&j+pjlia7bv1qf3_zet07gw_855_cn%v$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'locallibrary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,3 +127,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
+
+# O sistema de redefinição de senha requer que seu site ofereça suporte a e-mail, o que está além do escopo deste artigo,
+# portanto, essa parte ainda não funcionará . Para permitir o teste, coloque a seguinte linha no final do arquivo settings.py. Isso registra todos os e-mails enviados ao console (para que você possa copiar o link de redefinição de senha do console).
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
